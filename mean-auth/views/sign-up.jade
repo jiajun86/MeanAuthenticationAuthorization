@@ -1,0 +1,31 @@
+extends layout-public
+
+block content
+  div.jumbotron
+    h1 Sign-up
+    if message
+      div.alert.alert-danger.alert-dismissible
+        button.close(type="button" data-dismiss="alert")
+          span &times;
+        span= message
+    form(action="/sign-up" method="post")
+      div.form-group
+        label(for="email") E-mail
+        input.form-control#email(type="email" name="email" placeholder="Enter Your E-mail" required)
+      div.form-group
+        label(for="password") Password
+        input.form-control#password(type="password" name="password" placeholder="Enter Your Password" required)
+      div.form-group
+        label(for="name") Name
+        input.form-control#name(type="text" name="name" placeholder="Enter Your Name")
+      div.form-group
+        label(for="phone") Phone No.
+        input.form-control#phone(type="text" name="phone" placeholder="Enter Your Phone No.")
+      div.form-group
+        label(for="role") Role
+        select.form-control#role(name="role")
+          option(value="admin") Admin
+          option(value="user" selected) User
+      button.btn.btn-primary Submit
+    br
+    p If you already have an account, please #[a(href="/sign-in") Sign-in]

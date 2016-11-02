@@ -1,0 +1,21 @@
+extends layout-private
+
+block content
+  div.jumbotron
+    h1 Users
+    p This is a page for users with 'admin' role
+    table.table
+      thead: tr
+        th #
+        th E-mail
+        th Name
+        th Phone
+        th Role
+      tbody
+        each user, idx in users
+          tr
+            td= idx + 1
+            td= user.email
+            td= user.name
+            td= user.phone
+            td.capitalize= user.role

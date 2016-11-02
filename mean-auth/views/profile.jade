@@ -1,0 +1,32 @@
+extends layout-private
+
+block content
+  div.jumbotron
+    h1 Your Profile
+    p This is another page for authenticated users
+    form(action="/profile/#{user._id}" method="post")
+      div.form-group
+        label(for="email") E-mail
+        p.form-control-static#email= user.email
+      div.form-group
+        label(for="password") Password
+        input.form-control#password(type="password" name="password" placeholder="Enter Your Password")
+      div.form-group
+        label(for="name") Name
+        input.form-control#name(type="text" name="name" placeholder="Enter Your Name" value="#{user.name}")
+      div.form-group
+        label(for="phone") Phone No.
+        input.form-control#phone(type="text" name="phone" placeholder="Enter Your Phone No." value="#{user.phone}")
+      if user.role === 'admin'
+        div.form-group
+          label(for="role") Role
+          select.form-control#role(name="role")
+            option(value="admin") Admin
+            option(value="user") User
+      else
+        div.form-group
+          label(for="role") Role
+          p.form-control-static.capitalize#role= user.role
+      div.pull-left.padding-right: button.btn.btn-primary Update
+      div.pull-left.padding-right: button.btn.btn-danger(type="reset") Cancel
+      div.clearfix

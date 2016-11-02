@@ -1,0 +1,36 @@
+{
+  "name": "mean-auth",
+  "version": "1.0.0",
+  "description": "Simple application demonstrating user authentication and role-based access control using MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiajun86/MeanAuthenticationAuthorization/"
+  },
+  "author": {
+    "name": "Yan Jia Jun",
+    "email": "jiajun86@hotmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "jade": "^1.11.0",
+    "mongoose": "^4.6.5",
+    "mongoose-role": "^2.0.0",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "^2.3.0"
+  }
+}
